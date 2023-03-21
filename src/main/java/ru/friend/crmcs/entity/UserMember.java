@@ -17,13 +17,26 @@ public class UserMember {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * юзернейм пользователя системы
+     */
     private String username;
 
+    /**
+     * пасворд пользователя системы (занчение зашивровано Base64)
+     */
     private String password;
 
+    /**
+     * строковое предствление Имени и фамилии пользователя
+     */
     private String name;
 
-    private String role;
+    /**
+     * Роль ENUM
+     */
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @OneToMany(mappedBy = "orderCreator")
     private List<OrderCS> orderCS;
