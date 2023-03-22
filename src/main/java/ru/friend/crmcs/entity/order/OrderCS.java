@@ -1,6 +1,8 @@
-package ru.friend.crmcs.entity;
+package ru.friend.crmcs.entity.order;
 
 import lombok.*;
+import ru.friend.crmcs.entity.user.UserMember;
+import ru.friend.crmcs.entity.client.Client;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
@@ -27,6 +29,7 @@ public class OrderCS {
      * true = задача выполнена, false = задача не выаолнена
      * Значение по умолчанию = false
      */
+    @Column( columnDefinition = "boolean default false")
     private Boolean isReady;
 
     /**
@@ -34,22 +37,23 @@ public class OrderCS {
      * true = задача закрыта, false = задача не закрыта
      * Значение по умолчанию = false
      */
+    @Column( columnDefinition = "boolean default false")
     private Boolean isActive;
 
     /**
-     * дата и время создания задачи
+     * Дата и время создания задачи
      */
     @Column(updatable = false)
     private OffsetDateTime creationTime;
 
     /**
-     * дата и время закрытия задачи
+     * Дата и время закрытия задачи
      */
     @Column(updatable = false)
     private OffsetDateTime closedTime;
 
     /**
-     * текстовое тело заддачи/заказа
+     * Текстовое тело заддачи/заказа
      */
     private String bodyOfOrder;
 
@@ -58,6 +62,7 @@ public class OrderCS {
      * true = клинет оповещен, false = клиент не оповещен
      * Значение по умолчанию = false
      */
+    @Column( columnDefinition = "boolean default false")
     private Boolean isNotified;
 
     @OneToMany(mappedBy = "orderCS")

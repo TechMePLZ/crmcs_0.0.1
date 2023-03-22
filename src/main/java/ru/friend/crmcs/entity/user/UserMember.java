@@ -1,6 +1,9 @@
-package ru.friend.crmcs.entity;
+package ru.friend.crmcs.entity.user;
 
 import lombok.*;
+import ru.friend.crmcs.entity.order.CommentForOrders;
+import ru.friend.crmcs.entity.order.OrderCS;
+import ru.friend.crmcs.entity.user.Role;
 
 import javax.persistence.*;
 import java.util.List;

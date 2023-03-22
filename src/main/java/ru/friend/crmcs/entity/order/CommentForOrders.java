@@ -1,6 +1,7 @@
-package ru.friend.crmcs.entity;
+package ru.friend.crmcs.entity.order;
 
 import lombok.*;
+import ru.friend.crmcs.entity.user.UserMember;
 
 import javax.persistence.*;
 import java.io.Serializable;

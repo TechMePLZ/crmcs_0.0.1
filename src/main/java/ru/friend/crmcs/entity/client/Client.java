@@ -1,7 +1,8 @@
-package ru.friend.crmcs.entity;
+package ru.friend.crmcs.entity.client;
 
 
 import lombok.*;
+import ru.friend.crmcs.entity.order.OrderCS;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,14 +22,13 @@ public class Client {
 
     /**
      * Полное имя клиента
-     * !!!(не может быть null)
      */
     @Column(nullable = false)
     private String fullName;
 
     /**
      * Сторковое представление основного контактного номера телефона
-     * !!!(не может быть null)
+     *
      */
     @Column(nullable = false)
     private String primaryPhoneNumber;
@@ -45,8 +45,8 @@ public class Client {
     /**
      * Булевое значение  имеет ли клиент месенджер(TG, WA, Viber)  для опопвещения клиента через мессенджер
      * true = есть мессенджер, false = нет мессенджера
-     * по умолчанию false
      */
+    @Column( columnDefinition = "boolean default false")
     private Boolean haveMessenger;
 
     /**
